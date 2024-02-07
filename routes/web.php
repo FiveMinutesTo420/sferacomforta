@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 Route::middleware('auth')->group(function(){
     Route::get('/',[HomeController::class,'home'] );
+    Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 });
 Route::get("/login",[LoginController::class,'page'])->name('login');
 Route::post("/login/auth",[LoginController::class,'store'])->name('login_store');
